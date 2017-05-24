@@ -1,0 +1,30 @@
+* {
+	-webkit-font-smoothing: antialised;
+}
+
+
+/*
+ *	VARIABLES
+ */
+$black: 		#0C0E0B;
+$white:			#ffffff;
+$grey:			#909090;
+$primary:		#29AB87;
+$font:			'Avenir';
+$fontHeading:	'Avenir', sans-serif;
+
+@import "toolbox";
+@import "layout/fonts";
+
+@import "layout/global";
+@import "layout/header";
+@import "layout/footer";
+@import "elements/typography";
+@import "elements/hero";
+@import "elements/buttons";
+@import "elements/cta";
+@import "elements/testimonials";
+@import "pages/landing";
+@import "pages/single";
+@import "pages/projects";
+

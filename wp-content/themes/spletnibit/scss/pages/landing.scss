@@ -1,0 +1,105 @@
+.services {
+	h2 {
+		font-size: 20px;
+		color: $white;
+		margin-bottom: 30px;
+	}
+
+	p {
+		color: rgba(255,255,255, .7);
+		font-size: 16px;
+		line-height: 25px;
+	}
+
+	&__box {
+		height: 100%;
+		padding: 30px;
+		padding-top: 140px;
+		background-repeat: no-repeat;
+		background-position: 30px 30px;
+	}
+
+	&--grey {
+		background-image: url(../img/icons/service1.png);
+		background-color: #323232;
+	}
+	&--black {
+		background-image: url(../img/icons/service2.png);
+		background-color: #111110;
+	}
+	&--green {
+		background-image: url(../img/icons/service3.png);
+		background-color: $primary;
+	}
+}
+.projects {
+	padding: 120px 0;
+	@include svg-bg(middle_bg1,png, transparent, center 50px);
+	background-size: cover;
+
+	h3 {
+		text-align: center;
+		font-size: 40px;
+		margin-bottom: 80px;
+	}
+
+	&__project {
+		padding: 20px 30px;
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		transition: opacity .1s ease-in;
+
+		b {
+			font-size: 28px;
+
+			&.white { color: $white; }
+		}
+
+		&:hover {
+			opacity: .8;
+		}
+	}
+
+	&__left {
+
+		@include bp(lg) {
+			min-height: 600px;
+		}
+	}
+
+	&__right {
+		margin-bottom: 30px;
+		@include bp(lg) {
+			min-height: 285px;
+		}
+	}
+}
+
+.partners {
+	h3 {
+		text-align: center;
+		font-size: 40px;
+		margin-bottom: 80px;
+	}
+
+	&__partner {
+		min-height: 85px;
+		background-position: center center;
+		background-repeat: no-repeat;
+	}
+}
+
+.testimonials,
+.cta__bottom,
+.hero,
+.services,
+.projects,
+.partners {
+	padding: 0 0 80px;
+
+}
+
+.top-bg {
+	@include svg-bg(header-bg, png, transparent, right top);
+	background-size: cover;
+}

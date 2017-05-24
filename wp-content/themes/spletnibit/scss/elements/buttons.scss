@@ -1,0 +1,23 @@
+.btn {
+	padding: 25px 30px;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: $white;
+	border-radius: 0;
+	border: 0;
+	cursor:pointer;
+	outline: 0;
+	&.btn-primary {
+		background: $primary;
+
+		&:hover {
+			background: darken($primary, 10%);
+		}
+	}
+
+	&.btn-white {
+		background: $white;
+		color: $primary;
+	}
+}

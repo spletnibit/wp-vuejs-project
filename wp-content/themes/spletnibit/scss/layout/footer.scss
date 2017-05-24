@@ -1,0 +1,104 @@
+
+footer {
+	background: #373836;
+	padding: 80px 0 40px;
+	color: #5A5A5A;
+
+	b {
+		text-transform: uppercase;
+		font-size: 13px;
+		margin-bottom: 30px;
+		display: inline-block;
+	}
+
+	.footer{
+		&__logo {
+			margin-top: 10px;
+		}
+		&__copy {
+			margin-top: 70px;
+			font-size: 12px;
+		}
+
+		&__social,
+		&__contact {
+
+			li {
+				transition: padding-left  .1s ease-in;
+				&:hover {
+					padding-left: 10px;
+				}
+			}
+
+			a {
+				position: relative;
+				padding-left: 25px;
+
+				&::before {
+					position: absolute;
+					top: 3px;
+					left: 0;
+					width: 18px;
+					height: 16px;
+					content: ' ';
+					background-image: url(../img/sprites-16x.png);
+				}
+
+				&:hover {
+					padding-left: 25px;
+				}
+
+			}
+		}
+
+		&__social {
+			&--ln::before {
+				background-position: 0 0;
+			}
+
+			&--fb::before {
+				background-position: 8px 1px;
+				width: 8px !important;
+				left: 4px !important;
+			}
+		}
+
+		&__contact {
+			&--phone::before {
+				background-position: -32px 0;
+			}
+
+			&--mail::before {
+				background-position: -128px 0;
+			}
+		}
+
+		&__meni {
+			float: left;
+			margin-right: 70px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			ul {
+				list-style: none;
+				padding: 0;
+
+				li {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+
+
+
+	a {
+		transition: padding-left  .1s ease-in;
+		color: $white;
+		&:hover {
+			padding-left: 10px;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.hero {
+	h1 {
+		font-size: 64px;
+		line-height: 87px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	p {
+		color: $grey;
+		font-size: 20px;
+		line-height: 25px;
+		margin-bottom: 40px;
+	}
+
+	@include bp(lg) {
+		max-width: 800px;
+	}
+}

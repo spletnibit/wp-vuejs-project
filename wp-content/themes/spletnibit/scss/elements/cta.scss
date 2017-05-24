@@ -1,0 +1,55 @@
+.cta {
+
+	&__lang {
+		margin: 80px 0;
+		padding: 80px 40px;
+		text-align: center;
+
+		h3 {
+			font-size: 40px;
+		}
+
+		p {
+			color: $grey;
+			font-size: 20px;
+			line-height: 25px;
+
+			margin: 20px auto;
+
+
+			@include bp(lg) {
+				max-width: 640px;
+			}
+		}
+
+		a {
+			margin-top: 20px;
+		}
+		
+		@include bp(lg) {
+			background: url(../img/cta_langs.png) no-repeat center top;
+		}
+	}
+
+	&__bottom {
+		.col-sm-12 {
+			padding: 80px 20px;
+			text-align: center;
+			background: $primary;
+		}
+
+		h3 {
+			color: $white;
+			font-size: 40px;
+			line-height: 55px;
+		}
+
+		p {
+			color: $white;
+			font-size:18px;
+			line-height:25px;
+			max-width: 500px;
+			margin: 20px auto;
+		}
+	}
+}
