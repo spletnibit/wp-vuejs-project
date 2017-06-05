@@ -14,7 +14,7 @@
       <div class="col-md-4">
         <div class="services__box services--grey">
           <h2>Spletne strani in spletne trgovine</h2>
-          <p>Naj vaš posel ne počiva niti, ko počivate vi. Izdelamo moderne spletne strani ter privlačne trgovine, ki bodo prodajale kar same. Z vami smo od ideje do produkta.</p>
+          <p>Naj vaš posel ne počiva niti, ko počivate vi. Izdelujemo moderne spletne strani ter privlačne trgovine, ki bodo prodajale kar same. Z vami smo od ideje do produkta.</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -27,7 +27,8 @@
       <div class="col-md-4">
         <div class="services__box services--green">
           <h2>Razvoj mobilnih aplikacij</h2>
-          <p>Celostna grafična podoba naredi na kupce takojšen vtis. Zakaj ne bi ciljali na najboljše in jih privabili že na prvi pogled?</p>
+          <p>Izdelujemo hibridne mobilne aplikacije s pomočjo naprednih spletnih tehnologij. </p>
+          <!--<p>Celostna grafična podoba naredi na kupce takojšen vtis. Zakaj ne bi ciljali na najboljše in jih privabili že na prvi pogled?</p>-->
         </div>
       </div>
     </div>
@@ -54,7 +55,7 @@
         </div>
       </div>
 
-      <projects></projects>
+      <projects :number="3" :projects="projects" :rendered="projects.length"></projects>
     </div>
   </div>
 
@@ -83,7 +84,7 @@
     </div>
   </div>
 
-  <testimonials :data="testimonials"></testimonials>
+  <testimonials :base_url="base_url" :items="testimonials" :rendered="testimonials.length"></testimonials>
 
 </div>
 
@@ -104,23 +105,32 @@ export default {
   props: ['base_url'],
   data () {
     return {
+      testimonials: [],
+      projects: [
+      ],
       partners: ['/wp-content/uploads/2017/t1.png','/wp-content/uploads/2017/t2.png','/wp-content/uploads/2017/t3.png','/wp-content/uploads/2017/t4.png'],
-      testimonials: [
-        {
-          content: 'Mauris non tempor quam, et lacinia sapien. Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien.',
-          name: 'Janez Novak',
-          job: 'CEO Podjetje d.o.o.',
-          img: '/wp-content/themes/spletnibit/dist/img/person1.png'
-        }
-      ]
     }
   },
   created() {
     this.$router.app.$children[0].$emit('invertHeader', false)
+
+      this.$http.get(this.base_url + 'wp-json/wp/v2/reference', {}).then(response => {
+        if (response.status == 200) {
+          this.testimonials = response.data
+        }
+      });
+
+      this.getProjects();
+
   },
-
   methods: {
-
+    getProjects() {
+      this.$http.get(this.base_url + 'wp-json/wp/v2/projekti').then(response => {
+        if (response.status == 200) {
+          this.projects = response.data.slice(0, 3);
+        }
+      });
+    }
   }
 
 }

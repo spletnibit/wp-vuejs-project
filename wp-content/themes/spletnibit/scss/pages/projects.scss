@@ -2,6 +2,11 @@
 	&__heading {
 		margin-bottom: 80px;
 		padding-bottom: 40px;
+
+		@include bp(xs) {
+			text-align:center;
+		}
+
 		h1 {
 			margin-bottom: 20px;
 			font-size: 44px;
@@ -19,21 +24,43 @@
 	&__mobile {
 		position: absolute;
 		bottom: 0;
-		width: 262px;
-		height: 369px;
-		left: 400px;
 		box-shadow: 0 0 20px 4px rgba(0,0,0,.15);
 		z-index: 9;
+
+		@include bp(sm) {
+			width: 200px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			height: 281px;
+			left: 372px;
+		}
+
+		@include bp(md) {
+			width: 262px;
+			height: 369px;
+			left: 400px;
+		}
 	}
 
 	&__desktop {
 		position: absolute;
 		bottom: 0;
-		width: 653px;
-		height: 440px;
-		left: 480px;
 		z-index: 8;
 		box-shadow: 0 0 20px 4px rgba(0,0,0,.15);
+
+		@include bp(sm) {
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 560px;
+			height: 377px;
+			left: 372px;
+		}
+
+		@include bp(md) {
+			width: 653px;
+			height: 440px;
+			left: 480px;
+		}
 	}
 
 	&__item {
@@ -42,179 +69,90 @@
 		position: relative;
 		overflow: hidden;
 		min-height: 500px;
+		color: $white;
 
-		h3 {
+		@include bp(xs) {
+			padding: 40px;
+			min-height: auto;
+		}
+
+		h3 a {
 			font-size: 34px;
 			line-height: 46px;
 			font-width:bold;
 			margin-bottom: 20px;
+			color: $white;
+
+			@include bp(xs) {
+				font-size: 24px;
+				line-height: 36px;
+			}
 		}
 
 		p {
 			font-size: 16px;
 			margin-bottom: 80px;
+
+			@include bp(xs) {
+				margin-bottom: 40px;
+			}
 		}
 
 		.btn {
 			padding:25px 60px;
 
-			background: rgba(0,0,0,.1);
+			background: rgba(255,255,255,.1);
+
+			@include bp(xs) {
+				width: 100%;
+			}
 
 			&:hover {
-				background: rgba(0,0,0,.2);
+				background: rgba(255,255,255,.2);
 			}
 		}
 
 		&--float {
 			float: left;
 			max-width: 320px;
+
+			@include bp(xs) {
+				max-width: 100%;
+			}
 		}
 
 		&--inverted {
+			color: $black;
 			.btn {
 				color: $black;
+
+				background: rgba(0,0,0,.1);
+				&:hover {
+					background: rgba(0,0,0,.2);
+				}
 			}
+			h3 a {
+				color: $black;
+			}
+		}
+		&--odd {
+
+			.inner-projects__item--float { float: right; }
+
+
+			@include bp(sm) { .inner-projects__desktop {  left:-270px;bottom:0 } }
+			@include bp(md) { .inner-projects__desktop {  left:-200px; } }
+			@include bp(lg) { .inner-projects__desktop {  left:0px; } }
+
+			@include bp(sm) { .inner-projects__mobile { left:90px; } }
+			@include bp(md) { .inner-projects__mobile { left:260px; } }
+			@include bp(lg) { .inner-projects__mobile { left:440px; } }
+
 		}
 	}
 
 	&--border-bottom {
 		@include svg-bg(inner-bg, png, transparent, right bottom);
 		border-bottom: 1px solid #F5F5F5;
-	}
-}
-
-
-.contact {
-	&__header {
-
-		@include svg-bg(inner-bg, png, transparent, right bottom);
-		border-bottom: 1px solid #F5F5F5;
-
-		padding: 0 0 120px;
-		h1 {
-			font-size: 44px;
-			margin-bottom: 20px;
-			font-weight: bold;
-			text-align:center;
-		}
-
-		p {
-			font-size: 16px;
-			color: lighten($black, 30%);
-			max-width: 640px;
-			margin: 0 auto;
-			text-align:center;
-		}
-	}
-
-	&__content {
-
-		padding: 80px 0;
-
-		button {
-			margin: 0 auto;
-			padding: 20px 60px;
-			margin-top: 40px;
-		}
-
-		label {
-			font-size: 12px;
-			color: #b3b2b2;
-			text-transform: uppercase;
-			font-weight: bold;
-		}
-
-		.form-text {
-			color: #AB2C29;
-			font-size:12px;
-		}
-
-		textarea,
-		input {
-			border: 1px solid #f9f9f9;
-			border-radius: 0;
-			background: #F9F9F9;
-			font-size: 14px;
-			color: $black;
-			padding: 15px 20px;
-		}
-
-		.form-control-danger {
-			border: 1px solid #AB2C29;
-		}
-
-		textarea:focus,
-		input:focus {
-			border: 1px solid $primary;
-			background: #F9F9F9;
-		}
-	}
-}
-
-
-#project {
-
-	&__header {
-		padding: 40px 0 120px;
-		h1 {
-			font-size: 44px;
-			margin-bottom: 20px;
-			font-weight: bold;
-		}
-
-		p {
-			font-size: 16px;
-			color: lighten($black, 30%);
-			max-width: 640px;
-		}
-	}
-
-	&__content {
-		margin-top: -46px;
-	}
-}
-
-.single-project {
-	cler:both;
-	overflow: hidden;
-
-	&__section {
-		margin-bottom: 80px;
-		h3 {
-			font-size: 40px;
-			margin-bottom: 40px;
-			text-align: center;
-
-		}
-
-		p {
-			font-size: 20px;
-			line-height: 35px;
-			color: #909090;
-			max-width: 950px;
-			margin: 0 auto;
-			text-align: center;
-
-		}
-
-	}
-
-	&__features {
-		text-align: center;
-	}
-
-	&__feature {
-		width: 160px;
-		margin: 0 40px;
-		display: inline-block;
-		text-align: center;
-		font-size: 16px;
-		font-weight: bold;
-
-		&--bg {
-			width: 100px;
-			height: 100px;
-			margin: 0 auto 20px;
-		}
 	}
 }

@@ -13,7 +13,10 @@
 
 
     <div class="contact__content container">
-        <form v-on:submit.prevent="onSubmit">
+        <div v-show="submitted">
+            <h4 class="text-center">Hvala! Odgovorili vam bomo v najkrajšem možnem času.</h4>
+        </div>
+        <form id="contactForm" v-on:submit.prevent="onSubmit" v-show="!submitted">
         <div class="row">
             <div class="offset-md-2 col-md-8">
                 <div class="row">
@@ -41,8 +44,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
 
                             <label>Opcijsko naložite datoteke</label>
@@ -89,11 +91,17 @@
                     msg: null
                 },
                 file: null,
-                errors: []
+                errors: [],
+                submitted: false
             }
         },
         created() {
-
+            this.$router.app.$children[0].$emit('invertHeader', false)
+        },
+        metaInfo() {
+            return {
+                title: 'Kontakt - Spletni bit',
+            }
         },
         methods: {
             onFileSelect(e) {
@@ -117,17 +125,18 @@
                 return this.errors.indexOf(key) != -1
             },
             onSubmit() {
-                let form = document.getElementById('addForm');
+                let form = document.getElementById('contactForm');
                 let formData = new FormData(form);
                 formData.append('file', this.file);
 
                 this.$http.post(this.base_url + 'wp-json/spletnibit/v1/contact', formData, {
                     emulateJSON: true
                 }).then(response => {
-                    console.log(response.data);
+                    if (response.data == 'OK') {
+                        this.submitted = true;
+                    }
                 }, response => {
                     this.errors = response.data.data;
-                    console.log(this.errors);
                 });
 
             }

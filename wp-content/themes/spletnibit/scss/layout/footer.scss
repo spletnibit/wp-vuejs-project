@@ -11,29 +11,27 @@ footer {
 		display: inline-block;
 	}
 
+	@include bp(xs) {
+		text-align:center;
+
+		//.col-xs-12 { width: 100%;max-width:100%;flex:none; }
+	}
+
 	.footer{
 		&__logo {
 			margin-top: 10px;
 		}
 		&__copy {
-			margin-top: 70px;
+			margin-top: 50px;
 			font-size: 12px;
 		}
 
 		&__social,
 		&__contact {
 
-			li {
-				transition: padding-left  .1s ease-in;
-				&:hover {
-					padding-left: 10px;
-				}
-			}
-
 			a {
 				position: relative;
 				padding-left: 25px;
-
 				&::before {
 					position: absolute;
 					top: 3px;
@@ -42,10 +40,6 @@ footer {
 					height: 16px;
 					content: ' ';
 					background-image: url(../img/sprites-16x.png);
-				}
-
-				&:hover {
-					padding-left: 25px;
 				}
 
 			}
@@ -57,7 +51,7 @@ footer {
 			}
 
 			&--fb::before {
-				background-position: 8px 1px;
+				background-position: 50px 1px;
 				width: 8px !important;
 				left: 4px !important;
 			}
@@ -74,8 +68,17 @@ footer {
 		}
 
 		&__meni {
-			float: left;
-			margin-right: 70px;
+			@include bp(xs) {
+				width: 100%;
+			}
+			@include bp(sm) {
+				float: left;
+				margin-right: 30px;
+			}
+
+			@include bp(md) {
+				margin-right: 70px;
+			}
 
 			&:last-child {
 				margin-right: 0;
@@ -95,10 +98,24 @@ footer {
 
 
 	a {
-		transition: padding-left  .1s ease-in;
 		color: $white;
+
+		&::after {
+			display:block;
+			content: '';
+			border-bottom: solid 2px $primary;
+			transform: scaleX(0);
+			transform-origin:  0% 50%;
+			transition: transform 250ms ease-in-out;
+		}
+
 		&:hover {
-			padding-left: 10px;
+			text-decoration: none;
+			&::after { transform: scaleX(1); }
+		}
+
+		&.router-link-exact-active {
+			&::after { transform: scaleX(1); }
 		}
 	}
 }

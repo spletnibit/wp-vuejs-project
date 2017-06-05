@@ -36,7 +36,7 @@ $excerpt = '';
 <div id="fb-root"></div>
 <div id="app"></div>
 
-<!--<script src="/dist/build.js"></script>-->
- <script src="http://localhost:8080/dist/build.js"></script>
+<script src="/dist/build.js"></script>
+<!-- <script src="http://localhost:8080/dist/build.js"></script>-->
 </body>
 </html>

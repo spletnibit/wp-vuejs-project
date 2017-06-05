@@ -1,6 +1,6 @@
 <template>
 <div id="project">
-    <div class="inner__header" :style="{ backgroundColor: item.acf.color }">
+    <div  :class="{ 'inner__header': true, 'inner__header--inverted': item.acf.invert_header }" :style="{ backgroundColor: item.acf.color }">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
@@ -14,7 +14,7 @@
     <div id="project__content" class="container">
         <div class="row">
             <div class="col-sm-12">
-                <img class="img-fluid" :src="item.acf.projekt_devices" />
+                <img class="img-fluid single-project__img" :src="item.acf.projekt_devices" />
 
                 <div class="single-project__section">
                     <h3>Opis Projekta</h3>
@@ -30,32 +30,63 @@
                     </div>
                 </div>
 
+                <div class="single-project__section">
+                    <h4>Zaslonske slike</h4>
 
-                <testimonials></testimonials>
+                    <div class="single-project__browser"></div>
+                    <slider animation="fade" :interval="3000" :control-btn="false">
+                        <slider-item v-for="(screenshot, key) in item.acf.screenshots" :key="key">
+                            <img :src="screenshot.url" class="img-fluid" />
+                        </slider-item>
+                    </slider>
+                </div>
+
+
+                <testimonials :base_url="base_url" :items="testimonials" :rendered="testimonials.length" v-show="testimonialExist"></testimonials>
             </div>
         </div>
     </div>
+
+    <div class="project__related">
+        <div class="container">
+            <div class="row">
+                <h3>Drugi projekti</h3>
+            </div>
+
+            <projects :number="2" :projects="related" :rendered="related.length"></projects>
+        </div>
+    </div>
+
 </div>
 
 </template>
 
 <script type="text/babel">
 
+    import Projects from '../components/projects.vue';
+    import { Slider, SliderItem } from 'vue-easy-slider'
     import Testimonials from '../components/testimonials.vue';
 
     export default {
         name: 'project',
         props: ['base_url'],
         components: {
-            testimonials: Testimonials
+            testimonials: Testimonials,
+            projects: Projects,
+            slider: Slider,
+            'slider-item': SliderItem
         },
         data() {
             return {
+                testimonials: [],
+                testimonialExist: true,
                 item: {
                     acf: {
                         color: null,
                         features: [],
-                        short_desc: null
+                        short_desc: null,
+                        screenshots: [],
+                        invert_header: null,
                     },
                     title: {
                         rendered: null
@@ -70,27 +101,97 @@
                     wp: 'Wordpress',
                     dev: 'Razvoj'
                 },
-                rendered: false
+                rendered: false,
+                related: []
 
             }
         },
+        watch: {
+            '$route' (to, from) {
+                // react to route changes...
+//                if (to.path != from.path) {
+//                    if (to.path.indexOf('/projekti/') !== -1) {
+//                        let slug = to.path.replace('/projekti/','');
+//                        this.getProject(slug);
+//                    }
+//                }
+            },
+        },
         created() {
-            this.$router.app.$children[0].$emit('invertHeader', true)
+            this.$router.app.$children[0].$emit('routeProject')
+            this.getProject();
+        },
+        beforeRouteUpdate (to, from, next) {
+            this.transitionName = 'scaleDown'
+//            this.getProject(null, next);
 
-
-            this.$http.get(this.base_url + 'wp-json/wp/v2/projekti', {
-                params: {
-                    slug: this.$route.params.slug
+            if (to.path != from.path) {
+                if (to.path.indexOf('/projekti/') !== -1) {
+                    let slug = to.path.replace('/projekti/','');
+                    this.getProject(slug, next);
                 }
-            }).then(response => {
-                if (response.status == 200 && response.data.length) {
-                    this.item = response.data[0];
-                    window.scrollTo( 0, 0 );
-
-//                    this.$router.app.$children[0].$emit('invertHeader', this.item.acf.invert_header)
-                    this.$router.app.$children[0].$emit('headerBgColor', this.item.acf.color)
+            }
+        },
+        metaInfo() {
+            return {
+                title: this.item ? this.item.title.rendered : '',
+                titleTemplate: '%s - Spletni bit',
+            }
+        },
+        methods: {
+            getProject(slug = null, next = null) {
+                if (slug == null) {
+                    slug = this.$route.params.slug;
                 }
-            });
+                this.$http.get(this.base_url + 'wp-json/wp/v2/projekti', {
+                    params: {
+                        slug: slug
+                    }
+                }).then(response => {
+                    if (response.status == 200 && response.data.length) {
+                        this.item = response.data[0];
+                        if (next != null) next();
+                        window.scrollTo( 0, 0 );
+
+                        this.getRelatedProjects();
+                        this.$router.app.$children[0].$emit('headerBgColor', this.item.acf.color)
+
+                        if (this.item.acf.invert_header) {
+                            this.$router.app.$children[0].$emit('invertHeader', true)
+                        }
+
+                        if (this.item.acf.testimonial) {
+                            this.$http.get(this.base_url + 'wp-json/wp/v2/reference/'+ this.item.acf.testimonial.ID, {}).then(response => {
+                                if (response.status == 200) {
+                                    this.testimonials.push(response.data)
+                                }
+                            });
+                        } else {
+                            this.testimonialExist = false;
+                        }
+
+
+                    }
+                });
+            },
+            shuffleProjects(a) {
+                for (let i = a.length; i; i--) {
+                    let j = Math.floor(Math.random() * i);
+                    [a[i - 1], a[j]] = [a[j], a[i - 1]];
+                }
+                return a;
+            },
+            getRelatedProjects() {
+                this.$http.get(this.base_url + 'wp-json/wp/v2/projekti', {
+                    params: {
+                        exclude: [this.item.id]
+                    }
+                }).then(response => {
+                    if (response.status == 200) {
+                        this.related = this.shuffleProjects(response.data).slice(0, 2)
+                    }
+                });
+            }
         }
     }
 </script>

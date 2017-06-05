@@ -46,13 +46,44 @@
 	&__project {
 		padding: 20px 30px;
 		background-repeat: no-repeat;
-		background-position: right bottom;
+		background-position: center center;
 		transition: opacity .1s ease-in;
+		position: relative;
+		display: block;
+
+		@include bp(xs) {
+			margin-bottom: 20px;
+			color: $white;
+
+			b {
+				position: absolute;
+				width: 100%;
+				text-align:center;
+				top: 50%;
+				margin-top: -21px;
+				left: 0;
+				color: $white !important;
+			}
+
+			&::before {
+				position:absolute;
+				width: 100%;
+				height: 100%;
+				content: ' ';
+				top:0;
+				left:0;
+				background-color: rgba(0, 0, 0, .6);
+			}
+		}
+
+		@include bp(md) {
+			background-position: right bottom;
+		}
 
 		b {
 			font-size: 28px;
-
-			&.white { color: $white; }
+			color: $white;
+			&.black { color: $black; }
 		}
 
 		&:hover {
@@ -62,13 +93,51 @@
 
 	&__left {
 
+		@include bp(md-down) {
+			background-size: 95%;
+			background-position: right bottom;
+			min-height: 430px;
+		}
+
+		@include bp(xs) {
+			min-height: 200px;
+		}
+
+		@include bp(md) {
+			background-size: 98%;
+			min-height: 510px;
+		}
+
 		@include bp(lg) {
 			min-height: 600px;
+		}
+
+		&_img {
+			position: absolute;
+			right:0;
+			bottom:0;
+			width:80%;
+			height: 80%;
+			box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+			background-repeat: no-repeat;
+			background-position: left -31px;
 		}
 	}
 
 	&__right {
+		min-height: 300px;
 		margin-bottom: 30px;
+		@include bp(md-down) {
+			background-size: 90%;
+			background-position: right bottom;
+			min-height: 200px
+		}
+
+		@include bp(md) {
+			min-height: 240px;
+			background-size: 92%;
+		}
+
 		@include bp(lg) {
 			min-height: 285px;
 		}
@@ -86,6 +155,10 @@
 		min-height: 85px;
 		background-position: center center;
 		background-repeat: no-repeat;
+
+		@include bp(xs) {
+			margin-bottom:40px;
+		}
 	}
 }
 

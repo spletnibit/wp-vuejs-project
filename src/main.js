@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+
 Vue.use(VueRouter);
 
 import Meta from 'vue-meta'
@@ -18,15 +19,15 @@ var router = new VueRouter({
   mode: 'history',
   base: '/',
   routes: [
-    { path: '/', component: Landing},
-    { path: '/projekti', component: Projects},
-    { path: '/projekti/:slug', component: Project},
-    { path: '/kontakt', component: Contact}
+    { path: '/', component: Landing, name: 'landing'},
+    { path: '/projekti', component: Projects, name: 'projects'},
+    { path: '/projekti/:slug', component: Project, name: 'project'},
+    { path: '/kontakt', component: Contact, name: 'contact'}
   ]
 });
 
 new Vue({
   el: '#app',
-  router: router,
+  router,
   render: h => h(App)
 })

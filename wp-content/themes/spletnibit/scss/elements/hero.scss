@@ -1,9 +1,14 @@
 .hero {
 	h1 {
-		font-size: 64px;
-		line-height: 87px;
+		font-size: 48px;
+		line-height: 67px;
 		font-weight: 700;
 		margin-bottom: 20px;
+
+		@include bp(lg) {
+			font-size: 64px;
+			line-height: 87px;
+		}
 	}
 
 	p {
@@ -13,6 +18,9 @@
 		margin-bottom: 40px;
 	}
 
+	@include bp(xs) {
+		text-align:center;
+	}
 	@include bp(lg) {
 		max-width: 800px;
 	}

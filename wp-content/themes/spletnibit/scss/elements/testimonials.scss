@@ -20,13 +20,67 @@
 		}
 	}
 
+	.slider {
+
+		@include bp(xs) {
+			overflow: visible !important;
+		}
+
+		button {
+			margin-top:10px;
+			width: 45px;
+			height: 45px;
+			background: lighten($primary, 50%);
+			padding: 7px 0 0;
+
+			@include bp(xs) {
+				top: -110px;
+				z-index: 9;
+			}
+
+			&:focus {
+				outline:0;
+				box-shadow:none;
+			}
+
+			i {
+				transform: none;
+				background-image: url(../img/sprites-16x.png);
+				background-repeat: no-repeat;
+				border: 0;
+				padding: 0;
+			}
+
+			&.btn-right {
+				i {
+					background-position: -181px 0px;
+				}
+			}
+
+			&.btn-left {
+				i {
+					background-position: -160px 0px;
+				}
+			}
+		}
+
+		&:hover {
+			.btn {
+				background: lighten($primary, 40%) !important;
+			}
+		}
+	}
+
 	p {
 		font-size: 20px;
 		line-height: 35px;
 		color: #909090;
-		max-width: 750px;
 		margin: 0 auto;
 		text-align: center;
+
+		@include bp(sm) { max-width: 550px; }
+		@include bp(md) { max-width: 650px; }
+		@include bp(lg) { max-width: 750px; }
 	}
 
 	&__faces {
@@ -34,11 +88,18 @@
 		padding: 0;
 		margin: 0 auto 40px;
 		clear: both;
+		text-align:center;
 		overflow: hidden;
 		
 		li {
 			width: 60px;
-			margin: 0 auto;
+			margin: 0 10px;
+			display: inline-block;
+			transition: height .3s linear;
+
+			&.active {
+				width: 80px;
+			}
 		}
 	}
 }

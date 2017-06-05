@@ -28,12 +28,10 @@
                         <div class="rect5"></div>
                     </div>
 
-                    <div class="inner-projects__item col-sm-12" v-for="item in items" :style="{ backgroundColor: item.acf.color }" v-show="rendered">
-
-
+                    <div v-for="(item, key) in items" :class="{ 'inner-projects__item': true, 'col-sm-12': true, 'inner-projects__item--odd': isOdd( key) }" :style="{ backgroundColor: item.acf.color }" v-show="rendered">
 
                         <div :class="{ 'inner-projects__item--float': true, 'inner-projects__item--inverted': item.acf.invert_header }">
-                            <h3>{{ item.title.rendered }}</h3>
+                            <h3><router-link :to="getLink(item.slug)">{{ item.title.rendered }}</router-link></h3>
 
                             <p v-html="item.acf.short_desc"></p>
 
@@ -65,34 +63,21 @@
             this.$http.get(this.base_url + 'wp-json/wp/v2/projekti', {}).then(response => {
                 if (response.status == 200) {
                     this.items = response.data
-                    this.getACF();
+                    this.rendered = true;
                 }
             });
         },
+        metaInfo() {
+            return {
+                title: 'Projekti - Spletni bit',
+            }
+        },
         methods: {
+            isOdd(key) {
+                return key%2 == 0;
+            },
             getLink(slug) {
                 return '/projekti/' + slug;
-            },
-            search(id) {
-                for (var i=0; i < this.items.length; i++) {
-                    if (this.items[i].id === id) {
-                        return this.items[i];
-                    }
-                }
-            },
-            getACF() {
-                this.$http.get(this.base_url + 'wp-json/acf/v3/projekti').then(response => {
-                    if (response.status == 200) {
-                        var item;
-                        for (item in response.data) {
-                            this.search(response.data[item].id).acf = response.data[item].acf
-                        }
-                        this.rendered = true;
-
-
-
-                    }
-                });
             }
         }
     }
