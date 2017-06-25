@@ -7,7 +7,7 @@
 
 	<?php the_post() ?>
 	<title><?php the_title(); ?></title>
-	<meta name="description" content="<?= strip_tags(get_the_excerpt()) ?>"/>
+	<meta name="description" content="<?= html_entity_decode(strip_tags(get_the_excerpt())) ?>"/>
 	
 	<link rel="stylesheet" href="/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/wp-content/themes/spletnibit/dist/css/main.css">
@@ -16,7 +16,7 @@
 
 	<meta property="og:url"           content="<?=get_permalink()?>" />
 	<meta property="og:title"         content="<?=get_the_title()?>" />
-	<meta property="og:description"   content="<?= strip_tags(get_the_excerpt()) ?>" />
+	<meta property="og:description"   content="<?= html_entity_decode(strip_tags(get_the_excerpt())) ?>" />
 	<meta property="og:image"         content="/fb.png" />
 </head>
 <body>
