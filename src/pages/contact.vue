@@ -96,7 +96,7 @@
             }
         },
         created() {
-            this.$router.app.$children[0].$emit('invertHeader', false)
+            this.$router.app.$children[0].$emit('headerBgColor','#fff')
         },
         metaInfo() {
             return {

@@ -112,7 +112,7 @@ export default {
     }
   },
   created() {
-    this.$router.app.$children[0].$emit('invertHeader', false)
+    this.$router.app.$children[0].$emit('headerBgColor','#fff')
 
       this.$http.get(this.base_url + 'wp-json/wp/v2/reference', {}).then(response => {
         if (response.status == 200) {

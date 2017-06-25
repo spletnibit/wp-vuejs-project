@@ -59,7 +59,7 @@
             }
         },
         created() {
-            this.$router.app.$children[0].$emit('invertHeader', false)
+            this.$router.app.$children[0].$emit('headerBgColor','#fff')
             this.$http.get(this.base_url + 'wp-json/wp/v2/projekti', {}).then(response => {
                 if (response.status == 200) {
                     this.items = response.data

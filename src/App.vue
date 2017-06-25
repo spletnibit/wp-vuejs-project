@@ -75,9 +75,6 @@ export default {
     created() {
         this.$on('invertHeader', function(val) {
             this.cssClass['header--inverted'] = val
-//            if (!val) {
-//                this.header_bg_color = '#fff'
-//            }
         });
 
         this.$on('routeProject', function() {
