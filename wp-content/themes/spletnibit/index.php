@@ -6,7 +6,7 @@
 	<base href="<?=get_bloginfo('url')?>">
 
 	<title><?php echo the_title(); ?></title>
-	<meta name="description" content="<?php echo $excerpt; ?>"/>
+	<meta name="description" content="<?=the_content()?>"/>
 	
 	<link rel="stylesheet" href="/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/wp-content/themes/spletnibit/dist/css/main.css">
