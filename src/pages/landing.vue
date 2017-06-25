@@ -7,7 +7,7 @@
         <h1>Z vašo idejo do projekta, ki bo obračal glave</h1>
         <p>Naša ekipa z eksperti na področju razvoja s spletnimi tehnologijami ima samo en cilj - razviti projekt, kot ste si ga zamislili vi.</p>
 
-        <router-link to="/" class="btn btn-primary">ŽELIM BREZPLAČNO PONUDBO</router-link>
+        <router-link to="/kontakt" class="btn btn-primary">ŽELIM BREZPLAČNO PONUDBO</router-link>
       </div>
     </div>
     <div class="services row">
@@ -41,7 +41,7 @@
           <h3>Jeziki katere govorimo</h3>
           <p>Če vam oznake PHP, MySQL, SASS/CSS3, JavaScript, Ajax in HTML5 ne povedo ničesar, jih prepustite nam. Mi govorimo njihov jezik.</p>
 
-          <router-link to="/" class="btn btn-primary">ŽELIM BREZPLAČNO PONUDBO</router-link>
+          <router-link to="/kontakt" class="btn btn-primary">ŽELIM BREZPLAČNO PONUDBO</router-link>
         </div>
       </div>
     </div>
@@ -74,10 +74,10 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <h3>Druga ponudba CTA</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac enim vitae mi fermentum facilisis eu id sapien. </p>
+          <h3>Rastemo skupaj z vami!</h3>
+          <p>S pomočjo natančne analize vedenja uporabnikov pripravimo produkt, ki bo izboljšal <b>konverzijo in pospešil prodajo</b>. Nudimo svetovanje na podlagi naprednih matrik in projekt pripeljemo od ideje do cilja.</p>
 
-          <router-link to="/" class="btn btn-white">ŽELIM BREZPLAČNO PONUDBO</router-link>
+          <router-link to="/kontakt" class="btn btn-white">POŠLJITE POVRPRAŠEVANJE</router-link>
 
         </div>
       </div>
