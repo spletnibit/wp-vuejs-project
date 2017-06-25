@@ -7,16 +7,31 @@
 
 	<title><?php echo the_title(); ?></title>
 	<meta name="description" content="<?=the_content()?>"/>
-	
-	<link rel="stylesheet" href="/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/wp-content/themes/spletnibit/dist/css/main.css">
+
+	<noscript id="deferred-styles">
+		<link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/wp-content/themes/spletnibit/dist/css/main.css">
+	</noscript>
+	<script>
+		var loadDeferredStyles = function() {
+			var addStylesNode = document.getElementById("deferred-styles");
+			var replacement = document.createElement("div");
+			replacement.innerHTML = addStylesNode.textContent;
+			document.body.appendChild(replacement)
+			addStylesNode.parentElement.removeChild(addStylesNode);
+		};
+		var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+			webkitRequestAnimationFrame || msRequestAnimationFrame;
+		if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+		else window.addEventListener('load', loadDeferredStyles);
+	</script>
 
 	<?php wp_head() ?>
 </head>
 <body>
 <div id="app"></div>
 
-<script src="/dist/build.js"></script>
+<script src="/dist/build.js" async></script>
 <!-- <script src="http://localhost:8080/dist/build.js"></script>-->
 
 <script>
