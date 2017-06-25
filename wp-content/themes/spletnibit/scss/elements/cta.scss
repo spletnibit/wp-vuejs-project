@@ -54,6 +54,14 @@
 			line-height:25px;
 			max-width: 500px;
 			margin: 20px auto;
+
+			@include bp(md) {
+				max-width: 640px;
+			}
+
+			@include bp(lg) {
+				max-width: 720px;
+			}
 		}
 	}
 }
