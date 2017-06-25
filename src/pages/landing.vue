@@ -5,7 +5,7 @@
     <div class="hero row">
       <div class="col-sm-12">
         <h1>Z vašo idejo do projekta, ki bo obračal glave</h1>
-        <p>Naša ekipa z eksperti na področju razvoja s spletnimi tehnologijami ima samo en cilj - razviti projekt, kot ste si ga zamislili vi.</p>
+        <p>Naša ekipa z eksperti na področju razvoja s spletnimi tehnologijami ima samo en cilj - razviti projekt kot ste si ga zamislili vi.</p>
 
         <router-link to="/kontakt" class="btn btn-primary">ŽELIM BREZPLAČNO PONUDBO</router-link>
       </div>
@@ -39,7 +39,7 @@
       <div class="cta row">
         <div class="cta__lang col-sm-12">
           <h3>Jeziki katere govorimo</h3>
-          <p>Če vam oznake PHP, MySQL, SASS/CSS3, JavaScript, Ajax in HTML5 ne povedo ničesar, jih prepustite nam. Mi govorimo njihov jezik.</p>
+          <p>Če vam oznake PHP, MySQL, SASS/CSS3, JavaScript, Ajax in HTML5 ne povedo ničesar, jih prepustite nam. Mi govorimo te jezike.</p>
 
           <router-link to="/kontakt" class="btn btn-primary">ŽELIM BREZPLAČNO PONUDBO</router-link>
         </div>
