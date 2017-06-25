@@ -1,4 +1,7 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
 /**
  * The base configuration for WordPress
  *
@@ -77,7 +80,7 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG',false);
 define('FS_METHOD', 'direct');
 define( 'ACF_TO_REST_API_REQUEST_VERSION', 3 );
 /* That's all, stop editing! Happy blogging. */

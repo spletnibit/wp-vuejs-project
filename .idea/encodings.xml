@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/map/jquery.mapsvg.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/map/jquery.mousewheel.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/map/raphael.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/.eslintrc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/app/lib/Sage/Template/Blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/app/setup.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/build/webpack.config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/config.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/images/ikona_zemljevid-black.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/images/ikona_zemljevid2-black.svg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/scripts/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/scripts/routes/home.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/common/_global.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/common/_variables.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/components/_woocommerce.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/layouts/_footer.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/layouts/_header.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/layouts/_pages.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/layouts/_shop.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/assets/styles/main.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/functions.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/views/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/views/partials/footer.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/views/partials/header.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/views/template-home.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/archive-product-brand.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/archive-product.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/archive-product.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/checkout/form-billing.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/checkout/form-checkout.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/checkout/form-pay.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/checkout/review-order.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/content-product.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/content-product.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/content-product_cat.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/content-single-product.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/content-single-product.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/loop/add-to-cart.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/loop/loop-end.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/loop/loop-start.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/single-product.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/single-product.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/taxonomy-product_brand.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../KreativnaTovarna/sodcek/wp-content/themes/sodcek/resources/woocommerce/taxonomy-product_brand.php" charset="UTF-8" />
+  </component>
+</project>
