@@ -13,6 +13,11 @@
 	<link rel="stylesheet" href="/wp-content/themes/spletnibit/dist/css/main.css">
 
 	<?php wp_head() ?>
+
+	<meta property="og:url"           content="<?=get_permalink()?>" />
+	<meta property="og:title"         content="<?=get_the_title()?>" />
+	<meta property="og:description"   content="<?= strip_tags(get_the_excerpt()) ?>" />
+	<meta property="og:image"         content="/fb.png" />
 </head>
 <body>
 <div id="app"></div>
