@@ -19,7 +19,7 @@
                             </ul>
                         </div>
 
-                        <div class="footer__meni">
+                        <div class="footer__meni hide">
                             <b>socialna omrežja</b>
 
                             <ul class="footer__social">

@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <h1>Pošljite nam sporočilo</h1>
-                    <p>Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec viverra eleifend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum quis.</p>
+                    <p>Tukaj smo, da vam nudimo izkušnjo, kot bi jo želeli tudi sami. Odgovorimo na vsako vprašanje ter skupaj pridemo do optimalnih rešitev za vas in vaš projekt.</p>
                 </div>
             </div>
         </div>

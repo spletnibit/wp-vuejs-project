@@ -7,7 +7,7 @@
                     <div class="col-sm-12">
                         <h1>Projekti</h1>
 
-                        <p>Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec viverra eleifend lacus, vitae ullamcorper metus. Sed sollicitudin ipsum quis.</p>
+                        <p>Pridružite se podjetnikom, ki so svoje spletne rešitve že prepustili nam in tudi vi povečajte prodajo ter zadovoljstvo vaših strank.</p>
                     </div>
                 </div>
             </div>

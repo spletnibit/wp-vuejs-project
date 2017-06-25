@@ -27,7 +27,7 @@
       <div class="col-md-4">
         <div class="services__box services--green">
           <h2>Razvoj mobilnih aplikacij</h2>
-          <p>Izdelujemo hibridne mobilne aplikacije s pomočjo naprednih spletnih tehnologij. </p>
+          <p>Izdelujemo hibridne mobilne aplikacije s pomočjo naprednih spletnih tehnologij. Končano aplikacijo objavimo na tržnici App Store in Google Play.</p>
           <!--<p>Celostna grafična podoba naredi na kupce takojšen vtis. Zakaj ne bi ciljali na najboljše in jih privabili že na prvi pogled?</p>-->
         </div>
       </div>
@@ -122,6 +122,11 @@ export default {
 
       this.getProjects();
 
+  },
+  metaInfo() {
+    return {
+      title: 'Spletni bit',
+    }
   },
   methods: {
     getProjects() {

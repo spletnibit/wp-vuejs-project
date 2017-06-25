@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Projekt" transform="translate(-381.000000, -1444.000000)" fill-rule="nonzero" fill="#0C0E0B">
+            <g id="Group-7" transform="translate(345.000000, 1408.000000)">
+                <g id="design-32px-glyph-2_paint-brush" transform="translate(36.000000, 36.000000)">
+                    <path d="M6,8.77787512 L14.485,0.29287512 C14.875,-0.09712488 15.508,-0.09812488 15.899,0.29287512 L22.97,7.36387512 L21.556,13.0208751 L27.213,11.6068751 L30.041,14.4348751 C30.432,14.8258751 30.431,15.4588751 30.041,15.8488751 L21.556,24.3338751 L6,8.77787512 Z" id="Shape"></path>
+                    <path d="M4.70675,10 L3.29275,11.414 C1.70675,13 1.70675,15.485 3.29275,17.071 L6.24275,20.021 L0.82875,25.435 C-0.27625,26.54 -0.27625,28.33 0.82875,29.435 C1.93375,30.54 3.72375,30.54 4.82875,29.435 L10.24275,24.021 L13.19275,26.971 C14.77875,28.557 17.26375,28.557 18.84975,26.971 L20.26375,25.557 L4.70675,10 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

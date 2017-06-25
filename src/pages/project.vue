@@ -23,7 +23,7 @@
 
                 <div class="single-project__section single-project__features">
                     <div class="single-project__feature" v-for="feature in item.acf.features">
-                        <div class="single-project__feature--bg" :style="{ backgroundColor: item.acf.color }">
+                        <div class="single-project__feature--bg" :style="{ backgroundColor: item.acf.color,  backgroundImage: 'url(' + getFeatureIcon(feature) + ')' }">
 
                         </div>
                         {{ featuresDict[feature] }}
@@ -99,7 +99,9 @@
                     rwd: 'Odziven design',
                     ux: 'Uporabniška izkušnja',
                     wp: 'Wordpress',
-                    dev: 'Razvoj'
+                    dev: 'Razvoj',
+                    opencart: 'Opencart',
+                    analytics: 'Analitika prodaje'
                 },
                 rendered: false,
                 related: []
@@ -124,7 +126,7 @@
         beforeRouteUpdate (to, from, next) {
             this.transitionName = 'scaleDown'
 //            this.getProject(null, next);
-
+            console.log(to.path, from.path)
             if (to.path != from.path) {
                 if (to.path.indexOf('/projekti/') !== -1) {
                     let slug = to.path.replace('/projekti/','');
@@ -150,7 +152,6 @@
                 }).then(response => {
                     if (response.status == 200 && response.data.length) {
                         this.item = response.data[0];
-                        if (next != null) next();
                         window.scrollTo( 0, 0 );
 
                         this.getRelatedProjects();
@@ -170,6 +171,9 @@
                             this.testimonialExist = false;
                         }
 
+                        if (next != null) next();
+
+
 
                     }
                 });
@@ -180,6 +184,12 @@
                     [a[i - 1], a[j]] = [a[j], a[i - 1]];
                 }
                 return a;
+            },
+            getFeatureIcon(feature) {
+                if (this.item.acf.invert_header) {
+                    feature += '-black';
+                }
+                return '/wp-content/themes/spletnibit/dist/img/icons/' + feature + '.svg';
             },
             getRelatedProjects() {
                 this.$http.get(this.base_url + 'wp-json/wp/v2/projekti', {
