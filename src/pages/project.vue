@@ -2,6 +2,14 @@
 <div id="project">
     <div  :class="{ 'inner__header': true, 'inner__header--inverted': item.acf.invert_header }" :style="{ backgroundColor: item.acf.color }">
         <div class="container">
+            <div class="spinner" v-if="!rendered">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+
             <div class="row">
                 <div class="col-sm-12">
                     <h1>{{ item.title.rendered }}</h1>
@@ -126,7 +134,6 @@
         beforeRouteUpdate (to, from, next) {
             this.transitionName = 'scaleDown'
 //            this.getProject(null, next);
-            console.log(to.path, from.path)
             if (to.path != from.path) {
                 if (to.path.indexOf('/projekti/') !== -1) {
                     let slug = to.path.replace('/projekti/','');
@@ -153,13 +160,12 @@
                     if (response.status == 200 && response.data.length) {
                         this.item = response.data[0];
                         window.scrollTo( 0, 0 );
+                        this.rendered = true;
 
                         this.getRelatedProjects();
                         this.$router.app.$children[0].$emit('headerBgColor', this.item.acf.color)
+                        this.$router.app.$children[0].$emit('invertHeader', this.item.acf.invert_header)
 
-                        if (this.item.acf.invert_header) {
-                            this.$router.app.$children[0].$emit('invertHeader', true)
-                        }
 
                         if (this.item.acf.testimonial) {
                             this.$http.get(this.base_url + 'wp-json/wp/v2/reference/'+ this.item.acf.testimonial.ID, {}).then(response => {
@@ -170,6 +176,7 @@
                         } else {
                             this.testimonialExist = false;
                         }
+
 
                         if (next != null) next();
 
