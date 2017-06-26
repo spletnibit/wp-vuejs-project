@@ -4,7 +4,8 @@
     <div class="container">
     <div class="hero row">
       <div class="col-sm-12">
-        <h1>Z vašo idejo do projekta, ki bo obračal glave</h1>
+        <!--<h1>Z vašo idejo do projekta, ki bo obračal glave</h1>-->
+        <h1>Medtem, ko skrbite za svoj posel, prepustite spletne rešitve nam </h1>
         <p>Naša ekipa z eksperti na področju razvoja s spletnimi tehnologijami ima samo en cilj - razviti projekt kot ste si ga zamislili vi.</p>
 
         <router-link to="/kontakt" class="btn btn-primary">ŽELIM BREZPLAČNO PONUDBO</router-link>
