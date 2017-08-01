@@ -77,7 +77,7 @@
       <div class="row">
         <div class="col-sm-12">
           <h3>Rastemo skupaj z vami!</h3>
-          <p>S pomočjo natančne analize vedenja uporabnikov pripravimo produkt, ki bo izboljšal <b>konverzijo in pospešil prodajo</b>. Nudimo svetovanje na podlagi naprednih matrik in projekt pripeljemo od ideje do cilja.</p>
+          <p>S pomočjo natančne analize vedenja uporabnikov pripravimo produkt, ki bo izboljšal <b>konverzijo in pospešil prodajo</b>. Nudimo svetovanje na podlagi naprednih metrik in projekt pripeljemo od ideje do cilja.</p>
 
           <router-link to="/kontakt" class="btn btn-white">POŠLJITE POVRPRAŠEVANJE</router-link>
 
