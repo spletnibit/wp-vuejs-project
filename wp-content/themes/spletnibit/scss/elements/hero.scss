@@ -12,16 +12,14 @@
 	}
 
 	p {
+		max-width:800px;
 		color: $grey;
 		font-size: 20px;
-		line-height: 25px;
+		line-height: 30px;
 		margin-bottom: 40px;
 	}
 
 	@include bp(xs) {
 		text-align:center;
-	}
-	@include bp(lg) {
-		max-width: 800px;
 	}
 }
