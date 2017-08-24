@@ -128,11 +128,10 @@
                 let form = document.getElementById('contactForm');
                 let formData = new FormData(form);
                 formData.append('file', this.file);
-
                 this.$http.post(this.base_url + 'wp-json/spletnibit/v1/contact', formData, {
                     emulateJSON: true
                 }).then(response => {
-                    if (response.data == 'OK') {
+                    if (response.bodyText == 'OK') {
                         this.submitted = true;
                     }
                 }, response => {

@@ -127,7 +127,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: 'Spletni bit',
+      title: 'Spletni bit - Razvoj naprednih spletnih mest',
     }
   },
   methods: {

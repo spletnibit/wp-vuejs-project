@@ -62,7 +62,8 @@ gulp.task('watch', function() {
 			gulp.src(event.path).pipe(browserSync.reload({stream:true}));
 		});
 
-// Scss file watcher
+
+	// Scss file watcher
 	gulp.watch('./scss/**/*.scss', ['sass'])
 		.on('change', function(event){
 			console.log('File' + event.path + ' was ' + event.type + ', running tasks...')

@@ -29,7 +29,9 @@ function sendContact() {
 
 	}
 
-	if(! count($error) && wp_mail('info@spletnibit.si', 'Nov kontakt', $text, '', $attachment)) {
+
+	if(! count($error)) {
+		wp_mail('info@spletnibit.si', 'Nov kontakt', $text, '', $attachment);
 		echo 'OK';
 	}
 	else {

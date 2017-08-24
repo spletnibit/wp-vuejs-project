@@ -1,7 +1,7 @@
 .header__logo {
 	@include bp(sm-down) {
 		margin: 0 auto;
-		width: 320px;
+		width: 300px;
 		margin-bottom: 20px;
 		display: block;
 	}
