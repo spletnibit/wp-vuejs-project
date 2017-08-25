@@ -1,6 +1,7 @@
-# mesaranton
+# A WP API & Vue.js project
 
-> A Vue.js project
+ - Vuejs files are located in /src
+ - scss files are located in /wp-content/themes/spletnibit/scss2
 
 ## Build Setup
 
@@ -15,4 +16,9 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Gulp setup
+
+```
+# compile style assets
+gulp watch in wp-content/themes/spletnibit/
+``
